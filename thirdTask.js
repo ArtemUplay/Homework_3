@@ -14,13 +14,10 @@
 const title = document.querySelector('.title');
 
 function tasks() {
-  new Promise(function (resolve) {
-    resolve()
-  })
-    .then(() => {
-      console.log('Я первая задача');
-      title.style.color = 'green';
-    })
+  setTimeout(() => {
+    console.log('Я первая задача');
+    title.style.color = 'green';
+  }, 1000);
 
   setTimeout(() => {
     console.log('А я вторая задача');
