@@ -1,7 +1,7 @@
 const createTasks = async () => {
   // 1. Микро и рендер задачи.
 
-  const firstTask = async () => {
+  setTimeout(() => {
     const promiseOne = new Promise((resolve) => {
       resolve('then из первой задачи');
     });
@@ -10,16 +10,11 @@ const createTasks = async () => {
       console.log(value);
     });
 
-    await promiseOne;
-
     document.body.style.backgroundColor = 'yellow';
-  };
-
-  await firstTask();
+  }, 0);
 
   // 2. Микрозадача и микрозадача.
-
-  const secondTask = async () => {
+  setTimeout(() => {
     const promiseTwo = new Promise((resolve) => {
       resolve('then из второй задачи');
     });
@@ -31,13 +26,11 @@ const createTasks = async () => {
     promiseTwo.then((value) => {
       console.log(`Второй ${value}`);
     });
-  };
-
-  await secondTask();
+  }, 1000);
 
   // 3. Микрозадача и рендер страницы
 
-  const thirdTask = async () => {
+  setTimeout(() => {
     const promiseThree = new Promise((resolve) => {
       resolve('then из третьей задачи');
     });
@@ -46,13 +39,9 @@ const createTasks = async () => {
       console.log(message);
     });
 
-    await promiseThree;
-
     const title = document.querySelector('.title');
     title.textContent = 'Привет, JavaScript!';
-  };
-
-  await thirdTask();
+  }, 2000);
 };
 
 createTasks();
